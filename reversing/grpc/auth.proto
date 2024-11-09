@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package auth_service;
+
+option go_package = "./auth_service";
+
+service AuthService {
+  rpc Ping (.auth_service.PingRequest) returns (.auth_service.PingResponse) {}
+  rpc Login (.auth_service.LoginRequest) returns (.auth_service.LoginResponse) {}
+  rpc Logout (.auth_service.LogoutRequest) returns (.auth_service.LogoutResponse) {}
+  rpc Hidden (.auth_service.HiddenRequest) returns (.auth_service.HiddenResponse) {}
+}
+
+message PingRequest {
+  int64 ping = 1;
+}
+
+message PingResponse {
+  int64 response = 1;
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  bool response = 1;
+}
+
+message LogoutRequest {}
+
+message LogoutResponse {
+  bool response = 1;
+}
+
+message HiddenRequest {}
+
+message HiddenResponse {
+  string flag = 1;
+}
