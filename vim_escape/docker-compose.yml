@@ -1,0 +1,6 @@
+services:
+  vim_escape:
+    build: .
+    restart: always
+    ports:
+      - "8004:22"

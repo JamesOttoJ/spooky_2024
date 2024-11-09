@@ -1,0 +1,6 @@
+services:
+  grpc:
+    build: .
+    restart: always
+    ports:
+      - "8006:5002"
